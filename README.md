@@ -2,12 +2,12 @@
 Pipeline is a golang lib for create a simple memory pipeline by goroutine
 
 
-## Install
+### Install
 ```bash
 go get github.com/spksoft/pipeline
 ```
 
-## Example
+### Example
 ```go
 package main
 
@@ -73,8 +73,9 @@ func main() {
 
 ```
 
-## Inspiration
+### Inspiration
 
 [https://towardsdatascience.com/concurrent-data-pipelines-in-golang-85b18c2eecc2](https://towardsdatascience.com/concurrent-data-pipelines-in-golang-85b18c2eecc2)
 
+### Support
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/spksoft)
