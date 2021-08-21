@@ -1,11 +1,14 @@
 package pipeline
 
+import "context"
+
 // Processor is a function type for execute input and return output
-type Processor func(input <-chan interface{}) <-chan interface{}
+type Processor func(input <-chan interface{}, ctx context.Context) <-chan interface{}
 
 // Pipeline is a pipeline of processors
 type Pipeline struct {
 	registedProcessors []Processor
+	ctx                context.Context
 }
 
 // IPipeline is an interface for pipeline
@@ -23,13 +26,15 @@ func (p *Pipeline) RegisterProcessor(processor Processor) {
 func (p *Pipeline) Run() (result <-chan interface{}) {
 	nextInput := make(<-chan interface{})
 	for _, processor := range p.registedProcessors {
-		nextInput = processor(nextInput)
+		nextInput = processor(nextInput, p.ctx)
 	}
 	return nextInput
 }
 
 // New returns a new pipeline
-func New() *Pipeline {
-	p := Pipeline{}
+func New(ctx context.Context) *Pipeline {
+	p := Pipeline{
+		ctx: ctx,
+	}
 	return &p
 }
