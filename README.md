@@ -76,3 +76,5 @@ func main() {
 ## Inspiration
 
 [https://towardsdatascience.com/concurrent-data-pipelines-in-golang-85b18c2eecc2](https://towardsdatascience.com/concurrent-data-pipelines-in-golang-85b18c2eecc2)
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/spksoft)
