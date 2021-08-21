@@ -31,7 +31,7 @@ func prefixData(input <-chan interface{}) <-chan interface{} {
 }
 
 func main() {
-	p := pipeline.New("example")
+	p := pipeline.New()
 	p.RegisterProcessor(generateData)
 	p.RegisterProcessor(prefixData)
 	c := p.Run()

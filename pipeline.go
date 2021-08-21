@@ -4,7 +4,6 @@ package pipeline
 type Processor func(input <-chan interface{}) <-chan interface{}
 
 type Pipeline struct {
-	Name               string
 	registedProcessors []Processor
 }
 
@@ -25,9 +24,7 @@ func (p *Pipeline) Run() (result <-chan interface{}) {
 	return nextInput
 }
 
-func New(name string) *Pipeline {
-	p := Pipeline{
-		Name: name,
-	}
+func New() *Pipeline {
+	p := Pipeline{}
 	return &p
 }
